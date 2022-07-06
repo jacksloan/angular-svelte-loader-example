@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "./global.css";
   import { createEventDispatcher } from "svelte";
   import Icon from "./Icon.svelte";
 
@@ -8,8 +9,16 @@
   $: dispatch("change", count);
 </script>
 
-<p>Count = {count}</p>
-<p>{name}</p>
+<h1 class="text-3xl font-bold underline">Hello world!</h1>
+
+<p style="color:blue;">Count = {count}</p>
+<p class="green">{name}</p>
 <Icon width="24px" height="24px" />
-<button on:click={() => (count += 1)}>Increment</button>
-<button on:click={() => (count -= 1)}>Decrement</button>
+<button class="bg" on:click={() => (count += 1)}>Increment</button>
+<button class="xyz" on:click={() => (count -= 1)}>Decrement</button>
+
+<style>
+  .xyz {
+    @apply bg-green-500;
+  }
+</style>
